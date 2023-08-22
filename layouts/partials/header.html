@@ -1,14 +1,16 @@
 <header id="banner">
     <div class="header-content">
-        <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
-        <nav>
-            <ul>
-                {{ range .Site.Menus.main.ByWeight -}}
-                <li>
-                    {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
-                </li>
-                {{- end }}
-            </ul>
-        </nav>
+        <div class="header-inner">
+            <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+            <nav>
+                <ul>
+                    {{ range .Site.Menus.main.ByWeight -}}
+                    <li>
+                        {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+                    </li>
+                    {{- end }}
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>
