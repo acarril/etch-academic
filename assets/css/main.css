@@ -347,6 +347,9 @@ main#content .profile-image {
     header#banner h2 {
         font-size: 2.1rem;
     }
+    .header-inner {
+        padding-left: 14px; /* Adjust this value as per your preference */
+    }
 }
   
 .image-accent {
