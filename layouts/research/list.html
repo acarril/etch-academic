@@ -32,11 +32,15 @@
         <ul class="no-bullets">
             {{ with .coauthors }}<li>with {{ . | markdownify }}</li>{{ end }}
             {{ with .info }}<li>{{ . | markdownify }}</li>{{ end }}
-            {{ with .abstract }}<li><span class="abstract-toggle" data-abstract-id="{{ md5 . }}">▽ more</span></li>{{ end }}
+            {{ with .abstract }}
+                {{ $abstractContent := . | markdownify }}
+                <li><span class="abstract-toggle" data-abstract-id="{{ md5 . }}">▽ more</span></li>
+            {{ end }}
         </ul> 
-        {{with .abstract }}
+        {{ with .abstract }}
+            {{ $abstractContent := . | markdownify }}
             <div id="{{ md5 . }}" class="abstract" style="max-height: 0;">
-                {{ . }}
+                {{ $abstractContent }}
             </div>
         {{ end }}
     </div>
