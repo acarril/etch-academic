@@ -31,5 +31,11 @@
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     <link rel="canonical" href="{{ .Permalink }}" />
-    <title>{{ .Title }}</title>
+    <title>
+        {{ if eq .Title .Site.Title }}
+            {{ .Title }}
+        {{ else }}
+            {{ .Title }} ~ {{ index (split .Site.Title " ") 0 }}
+        {{ end }}
+    </title>
 </head>
