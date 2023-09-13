@@ -358,6 +358,7 @@ main#content .profile-image {
   
 .image-accent {
     position: relative;
+    height: min-content;
 }
   
 .image-accent::before {
