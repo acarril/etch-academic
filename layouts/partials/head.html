@@ -35,7 +35,7 @@
         {{ if eq .Title .Site.Title }}
             {{ .Title }}
         {{ else }}
-            {{ .Title }} ~ {{ index (split .Site.Title " ") 0 }}
+        {{ index (split .Site.Title " ") 0 }} ~ {{ .Title }}
         {{ end }}
     </title>
 </head>
