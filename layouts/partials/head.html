@@ -32,10 +32,10 @@
 
     <link rel="canonical" href="{{ .Permalink }}" />
     <title>
-        {{ if eq .Title .Site.Title }}
-            {{ .Title }}
+        {{ if .Title }}
+            {{ index (split .Site.Title " ") 0 }} ~ {{ .Title }}
         {{ else }}
-        {{ index (split .Site.Title " ") 0 }} ~ {{ .Title }}
+            {{ .Site.Title }}
         {{ end }}
     </title>
 </head>
