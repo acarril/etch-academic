@@ -65,7 +65,7 @@ header#banner nav ul li a {
         font-size: .95em;
     }
     header#banner nav ul li {
-        margin: 0 4px;
+        margin: 0 6px 0 0;
     }
 }
 
@@ -303,6 +303,14 @@ footer#footer {
     width: 100%;
 }
 
+.header-left {
+    flex-grow: 1; /* Ensures social icons stay on the left */
+}
+
+.header-right {
+    padding-top: 9px;
+}
+
 .header-content:before {
     content: '';
     position: absolute;
@@ -315,7 +323,10 @@ footer#footer {
 }
 
 .header-inner {
-    padding-left: 20px; /* Adjust this value as per your preference */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 5px 0px 15px;
 }
   
 .landing-page-content {
@@ -351,9 +362,6 @@ main#content .profile-image {
     }
     main#content {
         padding: 0 14px;
-    }
-    .header-inner {
-        padding-left: 14px; /* Adjust this value as per your preference */
     }
 }
   
@@ -398,4 +406,30 @@ main#content .bottom-image {
     width: 30%;
     height: auto;
     max-width: 200px; /* Set the maximum width */
+}
+
+.social-icons {
+    display: flex;
+    height: 100%;
+    align-items: baseline;
+}
+
+.social-icons ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    margin-right: 10px; /* Spacing between icons */
+}
+
+.social-icon {
+    transition: filter 0.3s ease;
+}
+
+
+.social-icon:hover {
+    filter: brightness(80%) invert(1)
 }
