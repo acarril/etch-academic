@@ -10,11 +10,13 @@
             {{- partial "about_excerpt.html" . -}}
             {{ .Content }}
         </div>
-        <div class="image-content image-accent">
-            <div class="image-wrapper">
-                <img src="{{ .Site.Params.profile_image | absURL }}" alt="headshot" class="profile-image">
+        <div class="image-offset">
+            <div class="image-content image-accent">
+                <div class="image-wrapper">
+                    <img src="{{ .Site.Params.profile_image | absURL }}" alt="headshot" class="profile-image">
+                </div>
             </div>
-        </div>        
+        </div>      
     </div>
 </article>
 {{ end }}
