@@ -4,8 +4,10 @@
     {{ end }}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ with .Site.Params.description -}}
-    <meta name="description" content="{{ . }}">
+    {{ with .Description }}
+        <meta name="description" content="{{ . }}">
+    {{ else }}
+        <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
     {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
     {{ with .OutputFormats.Get "rss" -}}
